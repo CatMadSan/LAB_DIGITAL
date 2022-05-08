@@ -27,9 +27,11 @@ output PWM);
 
 wire [3:0] contador;
 reg previous = 1;
+reg rst = 0;
 
 COUNTER Cntr(
 .CLoK(cLK),
+.Reset(rst),
 .CNTR(contador));
 
 always @ (posedge cLK) begin
